@@ -5,8 +5,10 @@ import UserCard from './UserCard'
 const UserCardList = props => {
     return(
         <div>
-            <img src={`${props.main.avatar_url}`}/>
-            <h1>{props.main.name}</h1>
+            <UserCard main={props.main}/>
+            {props.followers.map(follower => {
+                return <UserCard main={follower}/>
+            })}
         </div>
     )
 }
